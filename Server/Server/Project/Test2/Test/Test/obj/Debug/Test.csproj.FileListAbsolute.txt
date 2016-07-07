@@ -1,0 +1,5 @@
+E:\SharpDog\Server\Server\Project\Test2\Test\Test\bin\Debug\Test.dll
+E:\SharpDog\Server\Server\Project\Test2\Test\Test\bin\Debug\Test.pdb
+E:\SharpDog\Server\Server\Project\Test2\Test\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+E:\SharpDog\Server\Server\Project\Test2\Test\Test\obj\Debug\Test.dll
+E:\SharpDog\Server\Server\Project\Test2\Test\Test\obj\Debug\Test.pdb

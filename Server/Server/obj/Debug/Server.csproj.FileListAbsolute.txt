@@ -13,3 +13,6 @@ E:\服务器\Endless\Server\Server\Server.pdb
 E:\SharpDog\Server\Server\Server.exe.config
 E:\SharpDog\Server\Server\obj\Debug\Server.exe
 E:\SharpDog\Server\Server\obj\Debug\Server.pdb
+E:\SharpDog\Server\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+E:\SharpDog\Server\Server\Server.exe
+E:\SharpDog\Server\Server\Server.pdb

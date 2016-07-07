@@ -4,75 +4,45 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{46FB7428-735E-4755-BE9D-399F1C2C178C}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{4228345B-A595-438B-9883-313B724F00C0}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Server</RootNamespace>
-    <AssemblyName>Server</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <RootNamespace>Test</RootNamespace>
+    <AssemblyName>Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>.\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseClass\ApplicationBase.cs" />
-    <Compile Include="BaseClass\IO\LogHelper.cs" />
-    <Compile Include="BaseClass\IO\XmlLorder.cs" />
-    <Compile Include="BaseClass\PearBase.cs" />
-    <Compile Include="BaseClass\Socket\BufferManager.cs" />
-    <Compile Include="BaseClass\Socket\ICallBack.cs" />
-    <Compile Include="BaseClass\Socket\ICOPServer.cs" />
-    <Compile Include="BaseClass\Socket\NetWork.cs" />
-    <Compile Include="BaseClass\Socket\SocketAsyncEventArgsPool.cs" />
-    <Compile Include="BaseClass\IO\IOManager.cs" />
-    <Compile Include="BaseClass\IO\ServerConfig.cs" />
-    <Compile Include="Plugins\MonoXml\MiniParser.cs" />
-    <Compile Include="Plugins\MonoXml\SecurityParser.cs" />
-    <Compile Include="Plugins\MonoXml\SmallXmlParser.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="TestApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Project\Test\TestApplication.cs" />
-    <Compile Include="Project\Test\TestPear.cs" />
-    <Compile Include="ServerAssemble.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

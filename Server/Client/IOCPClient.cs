@@ -20,7 +20,10 @@ public class IOCPClient
     /// </summary>  
     private Boolean _connected = false;
 
+
     private const int ReceiveOperation = 1, SendOperation = 0;
+
+    private SocketAsyncEventArgs connectArgs;
 
     private static AutoResetEvent[]
              autoSendReceiveEvents = new AutoResetEvent[]
@@ -47,7 +50,7 @@ public class IOCPClient
     /// </summary>  
     public void Connect()
     {
-        SocketAsyncEventArgs connectArgs = new SocketAsyncEventArgs();
+        connectArgs = new SocketAsyncEventArgs();
 
         connectArgs.UserToken = _clientSock;
         connectArgs.RemoteEndPoint = _remoteEndPoint;
@@ -140,6 +143,10 @@ public class IOCPClient
         {
             ProcessReceive(e);
         }
+    }
+    public void StartRecive()
+    {
+        StartRecive(connectArgs);
     }
 
     /// <summary>  

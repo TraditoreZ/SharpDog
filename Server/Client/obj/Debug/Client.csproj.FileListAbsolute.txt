@@ -3,3 +3,8 @@ F:\Endless\Server\Client\bin\Debug\Client.pdb
 F:\Endless\Server\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
 F:\Endless\Server\Client\obj\Debug\Client.exe
 F:\Endless\Server\Client\obj\Debug\Client.pdb
+E:\SharpDog\Server\Client\bin\Debug\Client.exe
+E:\SharpDog\Server\Client\bin\Debug\Client.pdb
+E:\SharpDog\Server\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+E:\SharpDog\Server\Client\obj\Debug\Client.exe
+E:\SharpDog\Server\Client\obj\Debug\Client.pdb

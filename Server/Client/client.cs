@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 
@@ -34,6 +35,11 @@ public class client
     }
     public void Receive()
     {
+        byte[] buffer=new byte[256];
+        int dataCount = _client.GetStream().Read(buffer, 0, buffer.Length);
+        string value= Encoding.ASCII.GetString(buffer, 0, dataCount);
+        Console.WriteLine("服务器发送数据-"+ value);
+        
 
     }
 }

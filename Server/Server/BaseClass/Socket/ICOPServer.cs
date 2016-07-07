@@ -13,7 +13,7 @@ namespace Server.Lib
     /// <summary>  
     /// IOCP SOCKET服务器  
     /// </summary>  
-    public class IOCPServer : IDisposable,ICallBack
+    public class IOCPServer : NetWork, IDisposable,ICallBack
     {
         const int opsToPreAlloc = 2;
         #region Fields  
@@ -165,7 +165,7 @@ namespace Server.Lib
         /// <summary>  
         /// 启动  
         /// </summary>  
-        public void Start()
+        public override void Start()
         {
             if (!IsRunning)
             {
@@ -200,7 +200,7 @@ namespace Server.Lib
         /// <summary>  
         /// 停止服务  
         /// </summary>  
-        public void Stop()
+        public override void Stop()
         {
             if (IsRunning)
             {

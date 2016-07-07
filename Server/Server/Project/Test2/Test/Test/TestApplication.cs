@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Server.IO
+namespace Test
 {
-    class LogServer
+    public class TestApplication
     {
+
     }
 }

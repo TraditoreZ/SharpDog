@@ -2,9 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using Server;
 using Server.BaseClass;
 using Server.Scripts;
+using Server.BaseClass.Socket;
+using Server.BaseClass.IO;
 
 namespace Server
 {
@@ -14,21 +16,45 @@ namespace Server
         static void Main(string[] args)
         {
             Console.WriteLine("Server is Running....");
+            ServerAssemble assemble = new ServerAssemble(args);
 
+
+
+            // 反射
             application = new TestApplication();
             application.Start();
 
-            // 抽象
-            IOCPServer server = new IOCPServer(8088, 1024);
+
+            NetWork server=null;
+            // 抽象  -读取表
+            switch (assemble.netType)
+            {
+                case NetType.Tcp:
+                    server = new IOCPServer(assemble.TCPPort, assemble.maxClient);
+                    break;
+                case NetType.Udp:
+                    break;
+                case NetType.Http:
+                    break;
+            }           
+            Console.WriteLine(string.Format("server Port:{0}---maxClient:{1}", assemble.TCPPort, assemble.maxClient));
+            //LogHelper.WriteLog(typeof (Program), "服务器开启成功!");
             server.Start();
 
 
 
-
-            Console.ReadLine();
+            while (true)
+            {
+                string key= Console.ReadLine();
+                GetConsoleKey(key);
+            }
+            
         }
 
-
+        private static void GetConsoleKey(string key)
+        {
+            //留做控制台I/O
+        }
 
 
         ~Program()

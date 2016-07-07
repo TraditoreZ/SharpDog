@@ -18,7 +18,8 @@ namespace Server.Scripts
         public override void OnOperationRequest(string info,ICallBack send)
         {
             Console.WriteLine("Test:"+info);
-            send.Send(socketEvent, new byte[] { });
+            string re = "服务器返回信息！";
+            send.Send(socketEvent, Encoding.UTF8.GetBytes(re));
         }
     }
 }
