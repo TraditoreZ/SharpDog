@@ -13,3 +13,9 @@ E:\服务器\Endless\Server\Server\Server.pdb
 E:\SharpDog\Server\Server\Server.exe.config
 E:\SharpDog\Server\Server\obj\Debug\Server.exe
 E:\SharpDog\Server\Server\obj\Debug\Server.pdb
+F:\GitHubLib\SharpDog\Server\Server\Server.exe.config
+F:\GitHubLib\SharpDog\Server\Server\obj\Debug\Server.exe
+F:\GitHubLib\SharpDog\Server\Server\obj\Debug\Server.pdb
+F:\GitHubLib\SharpDog\Server\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+F:\GitHubLib\SharpDog\Server\Server\Server.exe
+F:\GitHubLib\SharpDog\Server\Server\Server.pdb
