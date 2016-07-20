@@ -18,7 +18,7 @@ public class IOCPClient
     /// <summary>  
     /// Socket连接标志  
     /// </summary>  
-    private Boolean _connected = false;
+    private bool _connected = false;
 
 
     private const int ReceiveOperation = 1, SendOperation = 0;
