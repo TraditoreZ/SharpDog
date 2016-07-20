@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Server</RootNamespace>
     <AssemblyName>Server</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -39,6 +39,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>ThirdLib\protobuf-net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,28 +56,23 @@
     <Compile Include="BaseClass\PearBase.cs" />
     <Compile Include="BaseClass\Socket\BufferManager.cs" />
     <Compile Include="BaseClass\Socket\ICallBack.cs" />
-    <Compile Include="BaseClass\Socket\ICOPServer.cs" />
+    <Compile Include="BaseClass\Socket\IOCPServer.cs" />
     <Compile Include="BaseClass\Socket\NetWork.cs" />
     <Compile Include="BaseClass\Socket\SocketAsyncEventArgsPool.cs" />
     <Compile Include="BaseClass\IO\IOManager.cs" />
     <Compile Include="BaseClass\IO\ServerConfig.cs" />
-    <Compile Include="Plugins\MonoXml\MiniParser.cs" />
-    <Compile Include="Plugins\MonoXml\SecurityParser.cs" />
-    <Compile Include="Plugins\MonoXml\SmallXmlParser.cs" />
+    <Compile Include="Project\Test\CSSayHello.cs" />
+    <Compile Include="Project\Test\ProtoPackage.cs" />
+    <Compile Include="ThirdLib\MonoXml\MiniParser.cs" />
+    <Compile Include="ThirdLib\MonoXml\SecurityParser.cs" />
+    <Compile Include="ThirdLib\MonoXml\SmallXmlParser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Project\Test\TestApplication.cs" />
     <Compile Include="Project\Test\TestPear.cs" />
-    <Compile Include="ServerAssemble.cs" />
+    <Compile Include="BaseClass\Model\ServerAssembleModel.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ThirdLib\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

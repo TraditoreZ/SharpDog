@@ -16,7 +16,7 @@ namespace Server
         static void Main(string[] args)
         {
             Console.WriteLine("Server is Running....");
-            ServerAssemble assemble = new ServerAssemble(args);
+            ServerAssembleModel assemble = new ServerAssembleModel(args);
 
 
 
@@ -26,7 +26,9 @@ namespace Server
 
 
             NetWork server=null;
+			server = new IOCPServer(8080, 1000);
             // 抽象  -读取表
+			
             switch (assemble.netType)
             {
                 case NetType.Tcp:
@@ -36,9 +38,10 @@ namespace Server
                     break;
                 case NetType.Http:
                     break;
-            }           
+            } 
+            
             Console.WriteLine(string.Format("server Port:{0}---maxClient:{1}", assemble.TCPPort, assemble.maxClient));
-            //LogHelper.WriteLog(typeof (Program), "服务器开启成功!");
+            LogHelper.WriteLog(typeof (Program), "服务器开启成功!");
             server.Start();
 
 

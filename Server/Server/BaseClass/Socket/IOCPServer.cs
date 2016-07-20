@@ -7,6 +7,8 @@ using System.Net;
 using System.Threading;
 using Server.BaseClass;
 using Server.BaseClass.Socket;
+using Server.Project.Test;
+using System.IO;
 
 namespace Server.Lib
 {
@@ -408,9 +410,13 @@ namespace Server.Lib
 
                         byte[] data = new byte[e.BytesTransferred];
                         Array.Copy(e.Buffer, e.Offset, data, 0, data.Length);//从e.Buffer块中复制数据出来，保证它可重用  
-
-                        string info = Encoding.Default.GetString(data);
-                        //Log4Debug(String.Format("收到 {0} 数据为 {1}", s.RemoteEndPoint.ToString(), info));
+                        //基类包
+                        var Mem = new MemoryStream(data);
+                        var package= ProtoBuf.Serializer.Deserialize<CSSayHello>(Mem);
+                        CSSayHello sayHello = (package as CSSayHello);
+                        string info = string.Format("名字：{0}-年龄{1}-对你说：{2}", sayHello.Name, sayHello.age, sayHello.Say);
+                        //string info = Encoding.Default.GetString(data);
+                        Log4Debug(String.Format("收到 {0} 数据为 {1}", s.RemoteEndPoint.ToString(), info));
                         pear[e.UserToken].OnOperationRequest(info,this);
                         //TODO 处理数据  
 
@@ -527,6 +533,7 @@ namespace Server.Lib
                     }
                     catch (SocketException ex)
                     {
+						Log4Debug (ex.Message);
                         //TODO 事件  
                     }
                 }

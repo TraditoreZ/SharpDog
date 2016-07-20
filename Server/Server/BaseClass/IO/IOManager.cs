@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Server.IO
 {
@@ -10,7 +6,7 @@ namespace Server.IO
     {
         public static string GetRunningFile()
         {
-            return Environment.CurrentDirectory;
+            return AppDomain.CurrentDomain.BaseDirectory;
         }
 
         public static ServerConfig LogConfig()

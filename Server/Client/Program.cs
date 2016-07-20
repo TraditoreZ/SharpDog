@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Text;
+using System.IO;
 
 namespace Client
 {
@@ -15,13 +15,16 @@ namespace Client
 
             c.connect();
             Console.WriteLine("服务器连接成功!");
-            int x = 0;
+
+            CSSayHello package = new CSSayHello() {Name = "zhaoenze", age = 24, Say = "Hello Server!"};
+            MemoryStream memStream = new MemoryStream();
+            ProtoBuf.Serializer.Serialize(memStream, package);
             while (true)
             {
                 Console.Write("send>");
                 //string msg = Console.ReadLine();
                 //if (msg == "exit")
-                c.send("Send Message:"+x++);
+                c.send(memStream);
                 //c.Receive();
                 System.Threading.Thread.Sleep(1000);
                 

@@ -2,7 +2,7 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-
+using System.IO;
 public class client
 {
 
@@ -32,6 +32,16 @@ public class client
     {
         byte[] data = Encoding.Default.GetBytes(msg);
         _client.GetStream().Write(data, 0, data.Length);
+    }
+
+    public void send(Stream stream)
+    {
+        byte[] data = new byte[stream.Length];
+        
+        stream.Seek(0, SeekOrigin.Begin);
+        stream.Read(data, 0, data.Length);
+        _client.GetStream().Write(data, 0, data.Length);
+
     }
     public void Receive()
     {

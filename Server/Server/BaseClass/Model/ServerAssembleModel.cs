@@ -18,7 +18,7 @@ namespace Server
         Http = 2
     }
 
-    public class ServerAssemble
+    public class ServerAssembleModel
     {
         private SecurityElement serverConfig;
         private int appCount = 0;
@@ -37,12 +37,12 @@ namespace Server
         private string MainApp;
         public NetType netType;
 
-        public ServerAssemble()
+        public ServerAssembleModel()
         {
             Instance();
         }
 
-        public ServerAssemble(string[] args)
+        public ServerAssembleModel(string[] args)
 
         {
             Instance();
@@ -54,7 +54,7 @@ namespace Server
             //加载配置文件  释放  存储到本地
             XmlLorder.Load("ServerConfig.config");
             serverConfig = XmlLorder.ReadXML("ServerConfig.config");
-            //XmlLorder.UnLoadXml("ServerConfig.config");
+            XmlLorder.UnLoadXml("ServerConfig.config");
             List<SecurityElement> applications = new List<SecurityElement>();
             foreach (SecurityElement child in serverConfig.Children)
             {
